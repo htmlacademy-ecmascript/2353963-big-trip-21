@@ -11,7 +11,11 @@ module.exports = {
   devtool: 'source-map',
   plugins: [
     new CopyPlugin({
-      patterns: [{ from: 'public' }],
+      patterns: [{ from: 'public',
+      globOptions: {
+        ignore: ['**/index.html'],
+      },
+    }],
     }),
   ],
 };
